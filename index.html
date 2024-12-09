@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constance | Morningside Foundry</title>
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/png" href="images/mfc-icon.png">
+    <link rel="apple-touch-icon" href="images/mfc-icon.png">
+    <style>
+        /* Index-specific styles */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin: 6rem 0;
+        }
+
+        .hero-content {
+            margin-top: 2rem;
+        }
+
+        h1 {
+            font-size: 2em;
+            font-weight: normal;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1em;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 3rem 0 1rem;
+        }
+
+        /* Feature Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .feature {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: var(--spacing);
+        }
+
+        /* File Tree Styles */
+        .tree {
+            list-style: none;
+            padding-left: 1rem;
+            margin: 0;
+        }
+
+        .tree.root {
+            padding-left: 0;
+        }
+
+        .tree li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tree li::before {
+            content: '├──';
+            position: absolute;
+            left: -0.5rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .tree li:last-child::before {
+            content: '└──';
+        }
+
+        .tree span {
+            display: inline-block;
+        }
+
+        .file-tree-container {
+            font-size: 0.85em;
+            background: rgba(255,255,255,0.03);
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .file-path {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85em;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Impact Statement */
+        .impact-statement {
+            margin-top: 2rem;
+            padding-left: 2rem;
+            border-left: 1px solid var(--accent);
+            position: relative;
+        }
+
+        .impact-statement::before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+        }
+
+        .impact-text {
+            font-size: 1.1em;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .impact-highlight {
+            color: var(--accent);
+        }
+
+        /* Systems Table */
+        .systems-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        .systems-table thead th {
+            text-align: left;
+            padding: 1rem;
+            background: rgba(255,255,255,0.03);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .systems-table tbody td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .system-type {
+            font-size: 0.85em;
+            padding: 0.25rem 0.5rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .system-status {
+            font-size: 0.85em;
+            padding: 0.25rem 0.5rem;
+            background: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        /* Industries Grid */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(255,255,255,0.1);
+            margin: 2rem 0;
+        }
+
+        .industry-item {
+            background: var(--primary);
+            padding: 2rem;
+            text-align: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .industry-item:hover {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .industry-code {
+            display: block;
+            font-size: 0.85em;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        /* Hero Button */
+        .hero-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            margin-top: 2rem;
+            background: var(--primary);
+            color: var(--text);
+            border: 1px solid var(--text);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.2s ease;
+        }
+
+        .hero-button:hover {
+            background: var(--text);
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .hero-button .arrow {
+            display: inline-block;
+            margin-left: 0.5rem;
+            transition: transform 0.2s ease;
+        }
+
+        .hero-button:hover .arrow {
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-meta">
+                <div class="header-left">
+                    <div><a href="index.html" class="company-link">MORNINGSIDE FOUNDRY</a></div>
+                    <div>SEMPER MUTANS</div>
+                </div>
+                <nav class="top-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="resources.html" class="nav-link">Resources</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>CONSTANCE<br>System of Record</h1>
+                    <p>Persona infrastructure for enterpise.</p>
+                    <div class="impact-statement">
+                        <p class="impact-text">
+                            Data issues cost our clients <span class="impact-highlight">time</span>, <span class="impact-highlight">money</span>, and <span class="impact-highlight">lives</span>.<br>
+                            We make sure data is available at the point of need. <span class="impact-highlight">Always.</span>
+                        </p>
+                    </div>
+                    <a href="#contact" class="hero-button">
+                        Inquire <span class="arrow">→</span>
+                    </a>
+                </div>
+                <div class="file-tree-container">
+                    <div class="file-path">~/constance/system/</div>
+                    <ul class="tree root">
+                        <li>
+                            <span>core/</span>
+                            <ul class="tree">
+                                <li><span>search.engine</span></li>
+                                <li><span>data.processor</span></li>
+                                <li><span>security.module</span></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>integrations/</span>
+                            <ul class="tree">
+                                <li><span>quickbooks/</span></li>
+                                <li><span>wordpress/</span></li>
+                                <li><span>docusign/</span></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>security/</span>
+                            <ul class="tree">
+                                <li><span>hipaa.compliance</span></li>
+                                <li><span>soc2.module</span></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>services/</span>
+                            <ul class="tree">
+                                <li><span>cleanup.service</span></li>
+                                <li><span>analytics.engine</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="feature">
+                    <h2>System of Record</h2>
+                    <p>Unified data layer that connects and standardizes information across your entire organization.</p>
+                </div>
+                <div class="feature">
+                    <h2>Agent Orchestration</h2>
+                    <p>Coordinate AI agents to automate complex workflows and decision-making processes.</p>
+                </div>
+                <div class="feature">
+                    <h2>Escrow & Interactions</h2>
+                    <p>Secure, auditable transaction layer for managing data exchanges and system interactions.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Legacy System Migration</h2>
+                <table class="systems-table">
+                    <thead>
+                        <tr>
+                            <th>System</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>QuickBooks</td>
+                            <td><span class="system-type">Financial</span></td>
+                            <td><span class="system-status">Migration Ready</span></td>
+                        </tr>
+                        <tr>
+                            <td>Xero</td>
+                            <td><span class="system-type">Financial</span></td>
+                            <td><span class="system-status">Migration Ready</span></td>
+                        </tr>
+                        <tr>
+                            <td>Salesforce</td>
+                            <td><span class="system-type">CRM</span></td>
+                            <td><span class="system-status">Migration Ready</span></td>
+                        </tr>
+                        <tr>
+                            <td>HubSpot</td>
+                            <td><span class="system-type">CRM</span></td>
+                            <td><span class="system-status">Migration Ready</span></td>
+                        </tr>
+                        <tr>
+                            <td>WordPress</td>
+                            <td><span class="system-type">CMS</span></td>
+                            <td><span class="system-status">Migration Ready</span></td>
+                        </tr>
+                        <tr>
+                            <td>Jira</td>
+                            <td><span class="system-type">Project</span></td>
+                            <td><span class="system-status">Migration Ready</span></td>
+                        </tr>
+                        <tr>
+                            <td>ServiceNow</td>
+                            <td><span class="system-type">ITSM</span></td>
+                            <td><span class="system-status">Migration Ready</span></td>
+                        </tr>
+                        <tr>
+                            <td>WebEOC</td>
+                            <td><span class="system-type">Emergency</span></td>
+                            <td><span class="system-status">Migration Ready</span></td>
+                        </tr>
+                        <tr>
+                            <td>CivicPlus</td>
+                            <td><span class="system-type">Government</span></td>
+                            <td><span class="system-status">Migration Ready</span></td>
+                        </tr>
+                        <tr>
+                            <td>Municode</td>
+                            <td><span class="system-type">Government</span></td>
+                            <td><span class="system-status">Migration Ready</span></td>
+                        </tr>
+                        <tr>
+                            <td>Everbridge</td>
+                            <td><span class="system-type">Emergency</span></td>
+                            <td><span class="system-status">Migration Ready</span></td>
+                        </tr>
+                        <tr>
+                            <td>Shopify</td>
+                            <td><span class="system-type">eCommerce</span></td>
+                            <td><span class="system-status">Migration Ready</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Industries</h2>
+                <div class="industries-grid">
+                    <div class="industry-item">
+                        <span class="industry-code">IND-001</span>
+                        Federal & Defense
+                    </div>
+                    <div class="industry-item">
+                        <span class="industry-code">IND-002</span>
+                        State & Local Government
+                    </div>
+                    <div class="industry-item">
+                        <span class="industry-code">IND-003</span>
+                        Banking & Lending
+                    </div>
+                    <div class="industry-item">
+                        <span class="industry-code">IND-004</span>
+                        Insurance
+                    </div>
+                    <div class="industry-item">
+                        <span class="industry-code">IND-005</span>
+                        Courts & Law
+                    </div>
+                    <div class="industry-item">
+                        <span class="industry-code">IND-006</span>
+                        Retail & Distribution
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta">
+                <h2>File System Cleanup</h2>
+                <p>Quick start package includes full system analysis and optimization</p>
+                <p class="price">$1,299.00</p>
+                <a href="#contact">Request Access →</a>
+            </section>
+
+            <dl class="technical-meta">
+                <dt>Version</dt>
+                <dd>1.0.0</dd>
+                <dt>Security</dt>
+                <dd>HIPAA & SOC II Compliant</dd>
+                <dt>Location</dt>
+                <dd>Appomattox, VA</dd>
+            </dl>
+        </main>
+
+        <footer>
+            <p>© 2024 Morningside Foundry. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

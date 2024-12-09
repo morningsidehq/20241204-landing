@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | Morningside Foundry</title>
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/png" href="images/mfc-icon.png">
+    <link rel="apple-touch-icon" href="images/mfc-icon.png">
+    <style>
+        /* Resources-specific styles */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .resource-card {
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .resource-card:hover {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .resource-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .resource-type {
+            color: var(--accent);
+        }
+
+        .resource-title {
+            font-size: 1.2em;
+            margin-bottom: 1rem;
+        }
+
+        .resource-excerpt {
+            margin-bottom: 2rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-meta">
+                <div class="header-left">
+                    <div><a href="index.html" class="company-link">MORNINGSIDE FOUNDRY</a></div>
+                    <div>SEMPER MUTANS</div>
+                </div>
+                <nav class="top-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="resources.html" class="nav-link">Resources</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <h1>Resources</h1>
+            <div class="resources-grid">
+                <article class="resource-card">
+                    <div class="resource-meta">
+                        <span class="resource-type">Technical Brief</span>
+                        <span>2024-03-20</span>
+                    </div>
+                    <h2 class="resource-title">Understanding System of Record Architecture</h2>
+                    <p class="resource-excerpt">
+                        An in-depth look at how modern organizations can implement a unified system of record to streamline operations and enhance data accessibility.
+                    </p>
+                    <a href="post.html" class="resource-link">Read More →</a>
+                </article>
+
+                <article class="resource-card">
+                    <div class="resource-meta">
+                        <span class="resource-type">Case Study</span>
+                        <span>2024-03-15</span>
+                    </div>
+                    <h2 class="resource-title">Federal Agency Migration Success</h2>
+                    <p class="resource-excerpt">
+                        How a federal agency successfully migrated from legacy systems to a unified data platform while maintaining security compliance.
+                    </p>
+                    <a href="post.html" class="resource-link">Read More →</a>
+                </article>
+
+                <article class="resource-card">
+                    <div class="resource-meta">
+                        <span class="resource-type">White Paper</span>
+                        <span>2024-03-10</span>
+                    </div>
+                    <h2 class="resource-title">AI Agent Orchestration Framework</h2>
+                    <p class="resource-excerpt">
+                        Detailed analysis of our approach to coordinating AI agents for complex workflow automation and decision support.
+                    </p>
+                    <a href="post.html" class="resource-link">Read More →</a>
+                </article>
+
+                <article class="resource-card">
+                    <div class="resource-meta">
+                        <span class="resource-type">Documentation</span>
+                        <span>2024-03-05</span>
+                    </div>
+                    <h2 class="resource-title">Constance API Reference</h2>
+                    <p class="resource-excerpt">
+                        Complete documentation of the Constance API, including integration guides and best practices for developers.
+                    </p>
+                    <a href="post.html" class="resource-link">Read More →</a>
+                </article>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 Morningside Foundry. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Berkeley Mono';
+    src: url('../fonts/BerkeleyMonoTrial-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --primary: #000000;
+    --text: #ffffff;
+    --accent: #EF301F;
+    --accent-light: #ff4433;
+    --spacing: 1.5rem;
+}
+
+body {
+    font-family: 'Berkeley Mono', monospace;
+    background: var(--primary);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 14px;
+    padding: var(--spacing);
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 var(--spacing);
+}
+
+/* Header Styles */
+.header {
+    margin-bottom: 4rem;
+    border-bottom: 1px solid var(--text);
+    padding-bottom: var(--spacing);
+}
+
+.header-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: var(--spacing);
+}
+
+.header-left {
+    display: flex;
+    gap: 2rem;
+}
+
+.top-nav {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 0;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    border: 1px solid var(--text);
+    text-decoration: none;
+    color: var(--text);
+}
+
+/* Links */
+a {
+    color: var(--accent-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    margin-top: 6rem;
+    padding-top: var(--spacing);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.85em;
+}
+
+/* Add to existing styles */
+.company-link {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.company-link:hover {
+    color: var(--text);
+    text-decoration: none;
+} 

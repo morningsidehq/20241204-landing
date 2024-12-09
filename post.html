@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding System of Record Architecture | Morningside Foundry</title>
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/png" href="images/mfc-icon.png">
+    <link rel="apple-touch-icon" href="images/mfc-icon.png">
+    <style>
+        /* Post-specific styles */
+        .post-header {
+            margin: 6rem 0 4rem;
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .post-type {
+            color: var(--accent);
+        }
+
+        .post-title {
+            font-size: 2.5em;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        .post-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .post-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .post-content h2 {
+            margin: 3rem 0 1.5rem;
+            font-size: 1.5em;
+        }
+
+        .post-content pre {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        .post-content code {
+            font-family: 'Berkeley Mono', monospace;
+            font-size: 0.9em;
+        }
+
+        .post-footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .post-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+        }
+
+        .post-nav a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 1rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.2s ease;
+        }
+
+        .post-nav a:hover {
+            background: rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-meta">
+                <div class="header-left">
+                    <div><a href="index.html" class="company-link">MORNINGSIDE FOUNDRY</a></div>
+                    <div>SEMPER MUTANS</div>
+                </div>
+                <nav class="top-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="resources.html" class="nav-link">Resources</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <article>
+                <header class="post-header">
+                    <div class="post-meta">
+                        <span class="post-type">Technical Brief</span>
+                        <span>2024-03-20</span>
+                        <span>TB-001</span>
+                    </div>
+                    <h1 class="post-title">Understanding System of Record Architecture</h1>
+                </header>
+
+                <div class="post-content">
+                    <p>
+                        In the modern enterprise landscape, data fragmentation poses a significant challenge to operational efficiency and decision-making capabilities. A System of Record (SoR) architecture addresses these challenges by providing a unified, authoritative source of truth for organizational data.
+                    </p>
+
+                    <h2>Core Principles</h2>
+                    <p>
+                        The fundamental principle behind a System of Record is data sovereignty - establishing a single, authoritative source for each data element while maintaining relationships between different data domains.
+                    </p>
+
+                    <pre><code>system.core:
+  - data.sovereignty
+  - unified.schema
+  - audit.trail
+  - version.control</code></pre>
+
+                    <h2>Implementation Strategy</h2>
+                    <p>
+                        Successful implementation requires careful consideration of existing systems, data flows, and organizational processes. The transition must be managed to ensure continuous operations while improving data accessibility and reliability.
+                    </p>
+
+                    <h2>Security Considerations</h2>
+                    <p>
+                        Security is paramount in a System of Record architecture. All data access must be authenticated, authorized, and audited. Encryption at rest and in transit is mandatory, with special consideration for regulated data types.
+                    </p>
+                </div>
+
+                <footer class="post-footer">
+                    <div class="post-meta">
+                        <span>Author: Morningside Research</span>
+                        <span>Last Updated: 2024-03-20</span>
+                    </div>
+                    <div class="post-nav">
+                        <a href="#previous">← Previous Brief</a>
+                        <a href="#next">Next Brief →</a>
+                    </div>
+                </footer>
+            </article>
+        </main>
+
+        <footer>
+            <p>© 2024 Morningside Foundry. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html> 
